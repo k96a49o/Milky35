@@ -20,11 +20,10 @@
     </style>
   </head>
   <body>
-  <a href="https://github.com/k96a49o/Milky35">Fork me on GitHub</a>    
     <div id="map"></div>
-    <script src="Карта/site/leaflet.js"></script>
-        <script src="Карта/site/catiline.js"></script>
-        <script src="leaflet.fgdb.js"></script>
+    <script src="https://raw.githubusercontent.com/k96a49o/Milky35/develop/Карта/site/leaflet.js"></script>
+        <script src="https://raw.githubusercontent.com/k96a49o/Milky35/develop/Карта/site/catiline.js"></script>
+        <script src="https://raw.githubusercontent.com/k96a49o/Milky35/develop/Карта/leaflet.fgdb.js"></script>
     <script>
       var map = L.map('map').setView([54.73, 55.97], 12);
       L.esri.basemapLayer("Topographic").addTo(map);
@@ -41,7 +40,7 @@
       parks.bindPopup(function(e){
         return L.Util.template(popupTemplate, e.feature.properties)
       });
-      L.fileGDB('Карта/site/gs.gdb.zip',options).addTo(m);
+      L.fileGDB('https://raw.githubusercontent.com/k96a49o/Milky35/develop/Карта/site/gs.gdb.zip',options).addTo(m);
     </script>
   </body>
 </html>
