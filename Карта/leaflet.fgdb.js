@@ -3,7 +3,7 @@ L.FileGDB =L.GeoJSON.extend({
         if(typeof cw !== 'undefined'){
             this.worker = cw(function(data,cb){
                 importScripts('gs.js');
-	            fgdb(data).then(cb);
+	            gs(data).then(cb);
             });
         }
         L.GeoJSON.prototype.initialize.call(this,{features:[]},options);
