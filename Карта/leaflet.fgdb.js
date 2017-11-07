@@ -3,7 +3,7 @@ L.FileGDB =L.GeoJSON.extend({
         if(typeof cw !== 'undefined'){
             this.worker = cw(function(data,cb){
                 importScripts('gs.js');
-	            gs(data).then(cb);
+	            fgdb(data).then(cb);
             });
         }
         L.GeoJSON.prototype.initialize.call(this,{features:[]},options);
@@ -32,7 +32,7 @@ L.FileGDB =L.GeoJSON.extend({
         if(self.worker){
             self.worker.data((typeof file === 'string')?cw.makeUrl(file):file).then(after,onError);
         }else{
-            gs(file).then(after,onError);
+            fgdb(file).then(after,onError);
         }
         return this;
     }
